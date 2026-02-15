@@ -56,7 +56,8 @@ public class Main {
         while (count <= countMonster){
             if (r.nextBoolean()) {
                 test = new Monster(sizeBoard);
-            }else {
+            }
+            else {
                 test = new BigMonster(sizeBoard);
             }
             if (board[test.getY()][test.getX()] instanceof EmptyCell){
@@ -89,6 +90,7 @@ public class Main {
             case "дА" : {
                 System.out.println("Выбери сложность игры(от 1 до 5):");
                 int difficultGame = sc.nextInt();
+                sc.nextLine();
                 System.out.println("Выбранная сложность:\t" + difficultGame);
                 while (true) {
                     board[person.getY() - 1][person.getX() - 1] = person;
@@ -102,7 +104,8 @@ public class Main {
                         System.out.println("Может начать новую игру?");
                         String answerEnd = sc.next();
                         if ((answerEnd=="ДА") || (answerEnd=="Да") || (answerEnd=="да") || (answerEnd=="дА")){
-//                            main();
+                            gameStatus=true;
+                            continue;
                         }
                         else    break;
                     }
@@ -122,7 +125,8 @@ public class Main {
                                     System.out.println("Может начать новую игру?");
                                     String answerEnd = sc.next();
                                     if ((answerEnd=="ДА") || (answerEnd=="Да") || (answerEnd=="да") || (answerEnd=="дА")){
-//                            main();
+                                        gameStatus=true;
+                                        continue;
                                     }
                                     else    {gameStatus=false;
                                         break;}
