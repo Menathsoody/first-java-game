@@ -2,7 +2,7 @@ FROM eclipse-temurin:17-jdk-alpine
 
 WORKDIR /app
 
-COPY *.java /app/
+COPY src/*.java /app/
 
 RUN javac *.java
 

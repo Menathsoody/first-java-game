@@ -22,12 +22,11 @@ public class MainSecond {
             steps.put("в", new Pair(1, 0));
 
 
-            int sizeBoard = 5;
+            //System.out.println("Впиши размер поля");
+            int sizeBoard = sc.nextInt();//4;
 
             Person person = new Person(sizeBoard);
 
-
-            int step = 0;
             Random r = new Random();
 
             System.out.println();
@@ -79,7 +78,7 @@ public class MainSecond {
 
 
 
-
+            
             switch (answer) {
                 case "ДА" :
                 case "Да"  :
@@ -158,16 +157,21 @@ public class MainSecond {
     static void outputBoard(Cell[][] board, int live) {
         String leftBlock = "| ";
         String rightBlock = "|";
-        String wall = "+ —— + —— + —— + —— + —— +";
-
+        String wall = "+ —— ";
+        String fullWall="";
+        int sizeBoard= board.length;
+        for (int i=sizeBoard; i>0; i--){
+            fullWall+=wall;
+        }
+        fullWall+="+";
         for (Cell[] raw : board) {
-            System.out.println(wall);
+            System.out.println(fullWall);
             for (Cell col : raw) {
                 System.out.print(leftBlock + col.getImage() + " ");
             }
             System.out.println(rightBlock);
         }
-        System.out.println(wall);
+        System.out.println(fullWall);
 
 
         System.out.println("Количество жизней:\t" + live + "\n");
