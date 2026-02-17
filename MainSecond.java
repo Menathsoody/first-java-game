@@ -23,7 +23,7 @@ public class MainSecond {
 
 
             //System.out.println("Впиши размер поля");
-            int sizeBoard = sc.nextInt();//4;
+            int sizeBoard =4; //sc.nextInt();
 
             Person person = new Person(sizeBoard);
 
@@ -78,7 +78,7 @@ public class MainSecond {
 
 
 
-            
+
             switch (answer) {
                 case "ДА" :
                 case "Да"  :
@@ -98,7 +98,7 @@ public class MainSecond {
                             System.out.println("Вы погибли");
                             System.out.println("Может начать новую игру?");
                             String answerEnd = sc.nextLine();
-                            if (answerEnd.equals("ДА") || answerEnd.equals("Да") || answerEnd.equals("да") || answerEnd.equals("дА")){
+                            if (answerEnd=="ДА" || answerEnd=="Да" || answerEnd=="да" || answerEnd=="дА"){
                                 roundActive = false;
                             }
                             else {
